@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Chikere Ezekannagha</title>
+    <title>Loan Express: A Coding Project By Chikere Ezekannagha</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,10 +13,10 @@
 
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
  
-    <!-- Google Fonts for Teko -->
+    <!-- Google Fonts for Shrikhand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
     <link href="/css/site.css" rel="stylesheet"> 
     <link rel="icon" type="image/png" href="/img/favicon.ico">
@@ -27,7 +27,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand logoFont" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" 
-            width="32" height="30"> APP NAME</a>
+            width="32" height="30"> LOAN EXPRESS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/c-eze/MortgageLoanCalculator">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -56,41 +56,67 @@
 <!-- === Main Section === -->
 <main class="flex-shrink-0">
     <div class="container mt-5">
-        <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col col-lg-4 border-end border-2">
-                <h1>App Name</h1>
-                <p class="lead">
-                    A JavaScript coding exercise using loops. 
-                </p>
-                <h2 class="mt-5">Instructions</h2>
-                <p>Enter a starting value and a ending value. Press the button and the values will appear.</p>
+        <div class="row">
+            <div class="col">
+                <h3>Loan Calculator</h3> 
             </div>
-            <div class="col col-lg-8">
-                <div>
-                    <h5>Enter Values</h5>
-                    <form class="row gy-2 gx-3">
-                        <div class="col">
-                            <input id="startValue" type="number" class="form-control" placeholder="Start Value" 
-                                value="0" aria-label="Start Value">
-                        </div>
-                        <div class="col">
-                            <input id="endValue" type="number" class="form-control" placeholder="End Value" 
-                                value="100" aria-label="End Value">
-                        </div>
-                        <div class="col-12 d-flex justify-content-end">
-                            <button id="btnSubmit" type="button" class="btn btn-lg btnColor">Display the Evens</button>
-                        </div>
-                    </form>
-                    <h4 class="mt-5 border-bottom border-2">Results</h4>
-                    <div class="table-respnsive">
-                        <table class="table table-striped table-sm">
-                            <tbody id="results">
-                                <!-- Results go here -->
-                            </tbody>
-                        </table>
+        </div>
+
+        <div class="row row-cols-1 row-cols-lg-2 mb-2 gy-3">
+            <!--Calculator form-->
+            <div class="col">
+                <form class="row formColor py-2">
+                    <div class="col-12 mb-1">
+                        <label for="loanAmount" class="form-label mb-0">Loan Amount:</label> 
+                        <input id="loanAmount" type="number" class="form-control border border-secondary" 
+                        placeholder="Loan Amount" value="15000" aria-label="Loan Amount">
                     </div>
-                </div>
+                    <div class="col-12 mb-1">
+                        <label for="payments" class="form-label mb-0">Payments:</label> 
+                        <input id="payments" type="number" class="form-control border border-secondary" 
+                        placeholder="Payments" value="60" aria-label="Payments">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="rate" class="form-label mb-0">Rate:</label> 
+                        <input id="rate" type="number" class="form-control border border-secondary"
+                            placeholder="Rate" value="3" aria-label="End Value">
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button id="btnSubmit" type="button" class="btn btn-outline-info">Calculate</button>
+                    </div>
+                </form>
             </div>
+            <!--Payment output-->
+            <div class="col">
+                <p class="text-center fs-4"><em>Your Monthly Payments</em></p>
+                <p class="text-center fs-1"><strong>$0.00</strong></p>
+                <div class="row row-cols-2">
+                    <div class="col">Total Principal</div>
+                    <div class="col" id="totalPrincipal" >$0.00</div>
+                    <div class="col">Total Interest</div>
+                    <div class="col" id="totalInterest">$0.00</div>
+                    <div class="col">Total Cost</div>
+                    <div class="col" id="totalCost"><strong>$0.00</strong></div>
+                </div> 
+            </div>
+        </div>
+        <!--Results table--> 
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Month</th>
+                        <th>Payment</th>
+                        <th>Principal</th>
+                        <th>Interest</th>
+                        <th>Total Interest</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="results">
+                    <!-- Results go here -->
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
@@ -120,6 +146,9 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
     </script>
     <script src="/js/site.js"></script> 
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
 </body>
 
 </html>

@@ -20,6 +20,10 @@ p span {
     color: white;
 }
 
+.formColor {
+    background-color: lightgrey;
+}
+
 .logoFont {
     font-family: "Shrikhand", serif;
     font-weight: 400;
