@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <title>App Name: A Coding Project By Chikere Ezekannagha</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts for Teko -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+
+    <link href="/css/site.css" rel="stylesheet"> 
+    <link href="/css/prism.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
+</head>
+
+<body class="d-flex flex-column h-100">
+<!-- === Nav Section === -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand logoFont" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" 
+            width="32" height="30"> APP NAME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="app.html">The App</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- === Main Section === -->
+<main class="flex-shrink-0">
+    <div class="container py-4 px-5 mt-5">
+        <h1 class="border-1 border-bottom border-dark">The Code for APP NAME</h1>
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col-lg-8">
+                <pre class="line-numbers"><code class="language-javascript">
+                    //Call Hello World
+                    function HelloWorld() {
+                        alert("Hello World");
+                    }
+                </code>
+                </pre>
+            </div>
+            <div class="col-lg-4">
+                <p>The Code is structured in one function.</p>
+                <h5>Code Explanation</h5>
+                <p>
+                    <code>checkForPalindrome</code> is a logic function that processes and checks to see if a string
+                    is actually a palindrome. It has only one parameter that brings in the value of the user string 
+                    from the <code>getValue</code> function. The function
+                    first converts the string into lower case. It then removes spaces and special characters from the
+                    string using a javascript regular expression.  After that, it reverses the string using a 
+                    <span>for-loop</span> and saves it character by character into a string array. It compares the user string
+                    and reversed string to see if they are equal. A message is generated based on this comparision. Finally, 
+                    the message along with the reversed string are stored into a JavaScript Object, and passed out of the
+                    function. 
+                </p>              
+                <h5>What I Learned</h5>
+                <ul>
+                    <li>
+                        Use JavaScript regular expressions for searching patterns that can be used in text search and 
+                        text replace operations. This eliminated need for multiple lines of code to search and replace 
+                        characters.  
+                    </li>
+                    <li>
+                        Use JavaScript objects as a container to hold multiple properties. This allows for easier passing 
+                        of information between functions. 
+                    </li>
+                </ul>
+                <h5>Possible Improvements</h5>
+                <ul>
+                    <li>
+                        Show previously entered strings along with their statuses in a running history/list. 
+                    </li>
+                    <li>
+                        Allow the user to enter multiple different strings at once and check them simultaneously to see 
+                        if they are palindromes.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- === Footer Section === -->
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 gy-3">
+            <div class="col order-last order-lg-first text-light text-center text-lg-start">
+                <div><span class="text-muted">&copy;2024</span> Chikere</div>
+            </div>
+            <div class="col d-flex justify-content-center">
+                <img src="/img/favicon-32x32.png" alt="Chikere Logo" height="45">
+            </div>
+            <div class="col d-flex justify-content-center justify-content-lg-end">
+                <div class="row">
+                    <div class="col social"><a href="https://www.linkedin.com/in/chikere-ezekannagha/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></div>
+                    <div class="col social"><a href="https://github.com/c-eze/" target="_blank"><i class="fab fa-github fa-2x"></i></a></div>
+                    <div class="col social"><a href="https://twitter.com/@chikeredev" target="_blank"><i class="fab fa-twitter fa-2x"></i></a></div>
+                    <div class="col social"><a href="https://youtube.com/@chikeredev" target="_blank"><i class="fab fa-youtube fa-2x"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+</script> 
+<script src="/js/prism.js"></script>
+<script>
+    Prism.plugins.NormalizeWhitespace.setDefaults({
+        'remove-trailing': true,
+        'remove-indent': true,
+        'left-trim': true,
+        'right-trim': true
+    })
+</script>
+</body>
+
+</html>
