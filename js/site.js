@@ -26,10 +26,9 @@ function getValues() {
     } else {
         alert("You must enter integers");
     }
-
 }
 
-//view function
+//logic function
 function generateNumbers(loanObj) { 
     let monthlyPayment = ((loanObj.balance) * (loanObj.rate/1200)) / (1 -Math.pow(1 + (loanObj.rate/1200), -loanObj.term));
 

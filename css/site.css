@@ -2,6 +2,7 @@
     /* colors */
     --primary-color: #1d5888;
     --secondary-color: #00BF63;
+    --secondary-color-alpha: #c3ffe7;
     --heading-bg-color: #e2e3e5; /* Bootstrap Secondary Sub Color */
     --heading-color: #6c757d; 
     --dark-color: #292929;
@@ -54,6 +55,29 @@ h2 {
 h3,h4,h5,h6 {
     color: var(--primary-color);
 }
+
+.accordion-button {
+    background-color: var(--white-color);
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: var(--dark-color);
+    
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: var(--secondary-color);
+    color: var(--dark-color);
+  }
+  
+  .accordion-button:hover{
+    background-color: rgb(224, 241, 255);
+  }
+  
+  .accordion-button:focus,
+  .accordion-button:active {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--secondary-color-alpha);
+  }
 
 footer .social>a {
     color: var(--white-color);

@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Chikere Ezekannagha</title>
+    <title>Loan Express: A Coding Project By Chikere Ezekannagha</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,10 +13,10 @@
 
     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
     
-    <!-- Google Fonts for Teko -->
+    <!-- Google Fonts for Shrikhand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
     <link href="/css/site.css" rel="stylesheet"> 
     <link href="/css/prism.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand logoFont" href="#"><img src="/img/favicon-32x32.png" class="d-inline-block align-text-top" 
-            width="32" height="30"> APP NAME</a>
+            width="32" height="30"> LOAN EXPRESS</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,7 +45,7 @@
                     <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                    <a class="nav-link" target="_blank" href="https://github.com/c-eze/MortgageLoanCalculator">Git Repo</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" href="#">About</a>
@@ -57,53 +57,152 @@
 <!-- === Main Section === -->
 <main class="flex-shrink-0">
     <div class="container py-4 px-5 mt-5">
-        <h1 class="border-1 border-bottom border-dark">The Code for APP NAME</h1>
-        <div class="row row-cols-1 row-cols-lg-2">
-            <div class="col-lg-8">
-                <pre class="line-numbers"><code class="language-javascript">
-                    //Call Hello World
-                    function HelloWorld() {
-                        alert("Hello World");
-                    }
-                </code>
-                </pre>
-            </div>
-            <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Code Explanation</h5>
-                <p>
-                    <code>checkForPalindrome</code> is a logic function that processes and checks to see if a string
-                    is actually a palindrome. It has only one parameter that brings in the value of the user string 
-                    from the <code>getValue</code> function. The function
-                    first converts the string into lower case. It then removes spaces and special characters from the
-                    string using a javascript regular expression.  After that, it reverses the string using a 
-                    <span>for-loop</span> and saves it character by character into a string array. It compares the user string
-                    and reversed string to see if they are equal. A message is generated based on this comparision. Finally, 
-                    the message along with the reversed string are stored into a JavaScript Object, and passed out of the
-                    function. 
-                </p>              
-                <h5>What I Learned</h5>
-                <ul>
-                    <li>
-                        Use JavaScript regular expressions for searching patterns that can be used in text search and 
-                        text replace operations. This eliminated need for multiple lines of code to search and replace 
-                        characters.  
-                    </li>
-                    <li>
-                        Use JavaScript objects as a container to hold multiple properties. This allows for easier passing 
-                        of information between functions. 
-                    </li>
-                </ul>
-                <h5>Possible Improvements</h5>
-                <ul>
-                    <li>
-                        Show previously entered strings along with their statuses in a running history/list. 
-                    </li>
-                    <li>
-                        Allow the user to enter multiple different strings at once and check them simultaneously to see 
-                        if they are palindromes.
-                    </li>
-                </ul>
+        <h1>The Code for LOAN EXPRESS</h1>
+        <h5 class="border-1 border-bottom border-dark">The Code is structured in three functions.</h5>
+        <div class="row">
+            <div class="col">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Function - getValues
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row row-cols-1 row-cols-lg-2">
+                                <div class="col-lg-4 order-lg-last">
+                                    <h5>getValues</h5>
+                                    <p>
+                                        Controller function that gets and validates values from the app page and then determines
+                                        whether those values should be processed and displayed in the results section.
+                                    </p>  
+                                </div>  
+                                <div class="col-lg-8">
+                                    <pre class="line-numbers"><code class="language-javascript">
+                                        //get values from the page
+                                        //controller function
+                                        function getValues() {
+                                            //get values from the page
+                                            let loanAmount = document.getElementById("loanAmount").value;
+                                            let payments = document.getElementById("payments").value;
+                                            let rate = document.getElementById("rate").value; 
+                                        
+                                            //Need to validate input
+                                            //parse into integers
+                                            loanAmount = parseInt(loanAmount);
+                                            payments = parseInt(payments);
+                                            rate = parseInt(rate);
+                                        
+                                            let loan = {};
+                                            loan.balance = loanAmount;
+                                            loan.term = payments;
+                                            loan.rate = rate;
+                                        
+                                            if (loanAmount > 0 && payments > 0 && rate > 0) {
+                                                //call generateNumbers
+                                                let loanObj = generateNumbers(loan);
+                                        
+                                                //call displayNumbers
+                                                displayNumbers(loanObj);
+                                            } else {
+                                                alert("You must enter integers");
+                                            }
+                                        }
+                                    </code>
+                                    </pre>
+                                </div>         
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Function - generateNumbers
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row row-cols-1 row-cols-lg-2">
+                                <div class="col-lg-4 order-lg-last">
+                                    <h5>generateNumbers(loanObj)</h5>
+                                    <h6>parameter (object) loanObj - container object of loan properties</h6>
+                                    <p>
+                                        Logic function that gets properties from loan object and performs calculations.
+                                        Results are returned by the function in an object  
+                                    </p>  
+                                </div>  
+                                <div class="col-lg-8">
+                                    <pre class="line-numbers"><code class="language-javascript">
+                                        //logic function
+                                        function generateNumbers(loanObj) { 
+                                            let monthlyPayment = ((loanObj.balance) * (loanObj.rate/1200)) / (1 -Math.pow(1 + (loanObj.rate/1200), -loanObj.term));
+                                        
+                                            let returnObj = {};
+                                            returnObj.payment = monthlyPayment;
+                                            returnObj.balance = loanObj.balance;
+                                            returnObj.term = loanObj.term;
+                                            returnObj.rate = loanObj.rate;
+                                        
+                                            return returnObj;
+                                        }
+                                    </code>
+                                    </pre>
+                                </div>         
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Function - displayNumbers
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <div class="row row-cols-1 row-cols-lg-2">
+                                <div class="col-lg-4 order-lg-last">
+                                    <h5>displayNumbers(loanObj)</h5>
+                                    <h6>parameter (object) loanObj - container object of loan properties</h6>
+                                    <p>
+                                        View function that gets properties from loan object and displays them in the 
+                                        result section of the app page. 
+                                    </p>  
+                                </div>  
+                                <div class="col-lg-8">
+                                    <pre class="line-numbers"><code class="language-javascript">
+                                        //view function
+                                        function displayNumbers(loanObj) { 
+                                            //write to 'result table' section
+                                            let templateRows = "";
+                                            let balance = loanObj.balance;
+                                            let totalInterest = 0;
+                                        
+                                            for (let index = 1; index <= loanObj.term; index++) { 
+                                                let interest = balance * loanObj.rate/1200;
+                                                let principal = loanObj.payment - interest;
+                                                totalInterest = totalInterest + interest;
+                                                balance = Math.abs(balance - principal);
+                                                templateRows += `<tr><td>${index}</td><td>${loanObj.payment.toFixed(2)}</td><td>${principal.toFixed(2)}</td><td>${interest.toFixed(2)}</td><td>${totalInterest.toFixed(2)}</td><td>${balance.toFixed(2)}</td></tr>`;  
+                                            }
+                                            document.getElementById("results").innerHTML = templateRows;
+                                        
+                                            //write to 'payment output' section
+                                            document.getElementById("monthlyPayments").innerHTML = `$${loanObj.payment.toFixed(2)}`;
+                                            document.getElementById("totalPrincipal").innerHTML = `$${loanObj.balance.toFixed(2)}`;
+                                            document.getElementById("totalInterest").innerHTML = `$${totalInterest.toFixed(2)}`;
+                                            document.getElementById("totalCost").innerHTML = `$${(loanObj.balance + totalInterest).toFixed(2)}`;
+                                        }
+                                    </code>
+                                    </pre>
+                                </div>         
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
     </div>
